@@ -27,7 +27,7 @@
             }
             ?>
         </div>
-        <a href="Principal.php" class="waves-effect waves-teal btn-flat">Volver al inicio</a>
+        <a href="index.php" class="waves-effect waves-teal btn-flat">Volver al inicio</a>
     </main>
     <footer>
         <div class="contenedor">

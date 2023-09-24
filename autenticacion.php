@@ -8,7 +8,7 @@ if (!isset($_POST['usuario'], $_POST['password'])) {
 
     // si no hay datos muestra error y redirecciona
 
-    header('Location: iniciar_sesion.html');
+    header('Location: Iniciar_sesion.html');
 }
 
 // evitar inyección sql
@@ -38,14 +38,14 @@ if ($stmt->num_rows > 0) {
         $stmt->execute();
         $stmt->bind_result($rol_id);
         if ($stmt->fetch()) {
-            $_SESSION['usuario_id'] = $usuario_id;
+            $_SESSION['usuario_id'] = $id;
             $_SESSION['rol_id'] = $rol_id;
         }
-        header('Location: principal.php');
+        header('Location: index.php');
     } else {
         // usuario incorrecto
         echo '<label> Usuario o contraseña incorrecta </label>';
-        header('Location: iniciar_sesion.html');
+        header('Location: Iniciar_sesion.html');
     }
 }
 $stmt->close();
