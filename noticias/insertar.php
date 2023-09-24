@@ -13,19 +13,19 @@
     include_once('../conexion.php');
     include_once('header.php');
     ?>
-    <section id="insertar">
+    <div id="form-noticias">
         <form action="insertar.php" method="post">
             <pre>
-            <label for="titulo">Título</label>
+            <label for="titulo">Título</label><br>
             <input type="text" name="titulo" required>
 
-            <label for="contenido">Contenido</label>
+            <label for="contenido">Contenido</label><br>
             <textarea name="contenido" rows="4" required></textarea>
 
-            <input type="submit" value="Enviar">
+            <input class="boton" type="submit" value="Enviar">
             </pre>
         </form>
-    </section>
+    </div>
 </body>
 
 </html>

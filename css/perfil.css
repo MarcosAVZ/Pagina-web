@@ -8,7 +8,7 @@ header {
 }
 
 main{
-    display: block;
+    display: flex;
     position: relative;
     width: 100%;
 }
@@ -21,13 +21,19 @@ main{
     align-items: center;
 }
 
+#volver{
+    justify-content: space-between;
+}
 #volver a {
+    margin-left: 5vh;
     text-decoration: none;
     color: #fff; /* Color de texto para el enlace del logo */
     font-size: 24px; /* Tamaño de fuente del logo */
+    margin: right 2vh;
 }
 #perfil {
     background-color: #00CED1; /* Color verde agua (turquesa) de fondo */
+    width: 100%;
     padding: 30px 0;
     text-align: center;
     color: #000000; /* Color de texto blanco */
@@ -44,8 +50,9 @@ main{
 }
 
 #perfil #datos-usuario {
+    margin: 2vh;
     background-color: #fff; /* Fondo blanco para el contenedor de datos del usuario */
-    padding: 20px;
+    padding: 8vh;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }

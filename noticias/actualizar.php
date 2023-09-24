@@ -32,17 +32,19 @@
     $sql = "SELECT * FROM noticias";
     $resultado = $conexion->query($sql);
     if ($resultado->num_rows > 0) {
-
+        echo "<section id='form-noticias'>";
         while ($row = $resultado->fetch_assoc()) {
-            echo "<form action='actualizar.php' method='post'>";
+            echo "<form action='actualizar.php' method='post'><br>";
             echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
             echo "<textarea name='titulo'>" . $row['titulo'] . "</textarea>";
             echo "<textarea class='contenido' name='contenido'>" . $row['contenido'] . "</textarea>";
-            echo "<button type='submit'>Enviar</button></form>";
+            echo "<br><button class='boton' type='submit'>Enviar</button><br></form>";
         }
+        echo "</section>";
     }
 
     ?>
 </body>
+
 
 </html>

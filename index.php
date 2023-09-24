@@ -9,8 +9,10 @@ include_once('conexion.php');
 
 <head>
     <meta charset="UTF-8">
-    <title>Pagina Web</title>
+    <title>Educar para Transformar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
     <link href="css/Principio.css" rel="stylesheet">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -26,18 +28,23 @@ include_once('conexion.php');
                 echo '<a href="logout.php" class="iniciar">Cerrar sesión</a>';
             } else {
                 // Si el usuario no ha iniciado sesión, mostrar "Iniciar Sesión"
-                echo '<a href="iniciar_sesion.html" class="iniciar">Iniciar Sesión</a>';
+                echo '<a href="Iniciar_sesion.html" class="iniciar">Iniciar Sesión</a>';
             }
             ?>
         </div>
         <nav class="menu">
             <ul>
-                <a href="Perfil.php">Perfil </a>
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo "<a href='Perfil.php'>Perfil </a>";
+                }
+                ?>
                 <a href="#quienes-somos">Quienes Somos </a>
                 <a href="#niveles-educativos">Niveles Educativos </a>
                 <a href="#bienestar-estudiantil">Bienestar estudiantil </a>
                 <a href="galeria.php">Galeria</a>
                 <a href="#noticias">Noticias </a>
+                <a href="#contacto">Contacto</a>
                 <a href="#ubicacion">Ubicación </a>
             </ul>
         </nav>
@@ -165,6 +172,25 @@ include_once('conexion.php');
         </div>
     </section>
 
+    <section id="contacto">
+
+        <form class="form">
+            <h2>Contactá con nosotros</h2>
+            <p type="Name:"><input placeholder="Escriba su nombre aquí">Nombre</input></p>
+            <p type="Email:"><input placeholder="Su email">Email</input></p>
+            <p type="Message:"><input placeholder="Tu pregunta o mensaje">Asunto</input></p>
+            <button>Enviar Mensaje</button>
+            <div class="div-contact">
+                <span class="fa fa-phone"></span>3624665544
+                <span class="fa fa-envelope-o"></span> contactoEducar@example.com
+            </div>
+        </form>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+
+        </div>
+    </section>
     <section id="ubicacion">
         <div clase="contenedor">
             <h1>Ubicación</h1>

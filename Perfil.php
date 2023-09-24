@@ -31,7 +31,13 @@ $stmt->close();
     <header>
         <div class="contenedor">
             <div id="volver">
-                <a href="Principal.php">Inicio</a>
+                <a href="index.php">Inicio</a>
+                <?php
+                if (isset($_SESSION['rol_id']) && $_SESSION['rol_id'] === 1) {
+                    // Mostrar contenido solo para administradores
+                    echo "<a href='noticias/noticias.php'>Noticias </a>";
+                } ?>
+
             </div>
         </div>
     </header>
@@ -39,16 +45,9 @@ $stmt->close();
     <main>
         <section id="perfil">
             <div class="contenedor">
-                <h1>Mi Perfil</h1>
+                <h1><?= $_SESSION['name'] ?></h1>
                 <div id="datos-usuario">
                     <img src="imagen_de_perfil.jpg" alt="Foto de Perfil">
-                    <table>
-                        <tr>
-                            <td>Nombre de Usuario: </td>
-                            <td><?= $_SESSION['name'] ?></td>
-                        </tr>
-                    </table>
-
                     <!-- <p>Descripción: </p> -->
                 </div>
             </div>

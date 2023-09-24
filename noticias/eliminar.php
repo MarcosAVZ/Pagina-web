@@ -34,16 +34,17 @@
     $sql = "SELECT * FROM noticias";
     $resultado = $conexion->query($sql);
     if ($resultado->num_rows > 0) {
-
+        echo "<section id='form-noticias'>";
         while ($row = $resultado->fetch_assoc()) {
-            echo "<form action='eliminar.php' method='post'>";
+            echo "<form action='eliminar.php' method='post'><br>";
             echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
             echo "<textarea name='titulo' readonly>" . $row['titulo'] . "</textarea>";
             echo "<textarea class='contenido' name='contenido' readonly>" . $row['contenido'] . "</textarea>";
-            echo "<button type='submit' onclick='return confirmarEliminacion();'>Eliminar</button>";
+            echo "<br><button class='boton' type='submit' onclick='return confirmarEliminacion();'>Eliminar</button>";
             echo "<input type='hidden' name='confirmar' value='Si'>"; // Agregamos un campo oculto
             echo "</form>";
         }
+        echo "</section>";
     }
     $conexion->close();
     ?>
