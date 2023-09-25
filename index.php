@@ -9,6 +9,7 @@ include_once('conexion.php');
 
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, intial scale=1.0">
     <title>Educar para Transformar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -17,9 +18,54 @@ include_once('conexion.php');
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
 
-<header>
+<?php //Ocultar la barra
+	$showHeader = true;
+	if (isset($_GET['scroll']) && $_GET['scroll'] === 'up') {
+		$showHeader = false;
+	}
+	?>
+<header class="header <?php if (!$showHeader) echo 'hidden';?>">
     <div class="contenedor">
-        <div id="IniciarSesion">
+        <nav class="navbar navbar-expand-lg navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo "<a class='nav-link' href='Perfil.php'>Perfil</a>";
+                }
+                ?>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#quienes-somos">Quienes Somos</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#niveles-educativos">Niveles Educativos</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#bienestar-estudiantil">Bienestar estudiantil</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#galeria">Galeria</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#noticias">Noticias</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#contacto">Contacto</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href='comentario/comentario.php'>Comentarios</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#ubicacion">Ubicación</a>
+				</li>
+            </ul>
+        </nav>
+		<div id="IniciarSesion">
             <?php
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 // Si el usuario ha iniciado sesión, mostrar "Cerrar Sesión"
@@ -32,27 +78,28 @@ include_once('conexion.php');
             }
             ?>
         </div>
-        <nav class="menu">
-            <ul>
-                <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                    echo "<a href='Perfil.php'>Perfil </a>";
-                }
-                ?>
-                <a href="#quienes-somos">Quienes Somos </a>
-                <a href="#niveles-educativos">Niveles Educativos </a>
-                <a href="#bienestar-estudiantil">Bienestar estudiantil </a>
-                <a href="galeria.php">Galeria</a>
-                <a href="#noticias">Noticias </a>
-                <a href="#contacto">Contacto</a>
-                <a href='comentario/comentario.php'>Comentarios</a>
-                <a href="#ubicacion">Ubicación </a>
-            </ul>
-        </nav>
         <div id="logo">
-            <img src="css/img/Logotipo.png" width="100" height="100" alt="logo"></a>
+            <img src="css/img/Logotipo.png" width="90" height="90" alt="logo"></a>
         </div>
     </div>
+<script>
+    var prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        // Show the header when scrolling up
+        document.querySelector('.header').classList.remove('hidden');
+      } else {
+        // Hide the header when scrolling down
+        document.querySelector('.header').classList.add('hidden');
+      }
+
+      prevScrollPos = currentScrollPos;
+    };
+  </script>
+
 </header>
 
 <body>
@@ -117,6 +164,49 @@ include_once('conexion.php');
         </div>
     </section>
 
+<section id="galeria">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+<h1>Galería</h1>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <?php
+    $imageFolder = 'galeria/';
+    $images = glob($imageFolder . '/*.*');
+    $totalImages = count($images);
+
+    for ($i = 0; $i < $totalImages; $i++) {
+      $activeClass = ($i === 0) ? 'active' : '';
+      echo '<li data-target="#carouselExampleIndicators" data-slide-to="' . $i . '" class="' . $activeClass . '"></li>';
+    }
+    ?>
+  </ol>
+
+  <div class="carousel-inner">
+    <?php
+    foreach ($images as $index => $image) {
+      $activeClass = ($index === 0) ? 'active' : '';
+      echo '<div class="carousel-item ' . $activeClass . '">';
+      echo '<img class="d-block w-100 h-100 object-fit-cover" src="' . $image . '" alt="Image ' . ($index + 1) . '">';
+      echo '</div>';
+    }
+    ?>
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</section>
 
     <section id="noticias">
     <h1>Últimas Noticias</h1>
@@ -173,6 +263,7 @@ include_once('conexion.php');
             <?php echo generarMapa(); ?>
         </div>
     </section>
+</script>
 
 </body>
 

@@ -39,8 +39,21 @@ header {
     background-color: #3dfdb0;
     color: #fff;
     padding: 10px 0;
+	top: 0;
+	left: 0;
     position: fixed;
     width: 100%; /* Ancho del encabezado al 100% de la ventana */
+	transition: transform 0.3s ease;
+	z-index: 9999;
+}
+.header.hidden{
+	transform: translateY(-100%);
+}
+
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 5;
 }
 
 /* Estilos para el contenedor */
@@ -98,7 +111,7 @@ header {
 /* Estilos para la sección de Quiénes Somos */
 #quienes-somos {
     background-color: #f2f2f2; /* Fondo gris claro */
-    padding: 20vh;
+    padding: 3vh;
     text-align: center;
 }
 
@@ -142,7 +155,7 @@ header {
     background-color: #f2f2f2;
     color: #fefefe;
     text-align: center;
-    padding: 20vh;
+    padding: 3vh;
 }
 
 #niveles-educativos h3 {
@@ -256,7 +269,7 @@ header {
 #bienestar-estudiantil {
     color: #237ad6;
     background-color: #f2f2f2;
-    padding: 20vh;
+    padding: 3vh;
     text-align: center;
 }
 
@@ -330,12 +343,61 @@ header {
 }
 
 
+#galeria {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 3vh;
+    color: #237ad6;
+}
 
+#galeria h1 {
+    font-size: 36px; /* Aumenta el tamaño del título */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+    .carousel {
+      position: relative;
+      z-index: 1;
+	  
+    }
+
+    .carousel-item img {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+		}
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+@media (min-width: 992px) {
+	.carousel{
+		width: 700px;
+		margin: 0 auto;
+	}
+}
 
 #noticias {
     background-color: #f2f2f2;
     text-align: center;
-    padding: 20vh;
+    padding: 3vh;
     color: #237ad6;
 }
 
