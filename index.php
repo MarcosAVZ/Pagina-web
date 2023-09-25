@@ -45,6 +45,7 @@ include_once('conexion.php');
                 <a href="galeria.php">Galeria</a>
                 <a href="#noticias">Noticias </a>
                 <a href="#contacto">Contacto</a>
+                <a href='comentario/comentario.php'>Comentarios</a>
                 <a href="#ubicacion">Ubicación </a>
             </ul>
         </nav>
@@ -62,6 +63,7 @@ include_once('conexion.php');
             <p>Institución de gestión privada de alta calidad educativa, ubicada en las afuera de la ciudad de Resistencia</p>
         </div>
     </section>
+
     <section id="quienes-somos">
         <div class="contenedor">
             <h2>Quiénes Somos</h2>
@@ -77,6 +79,8 @@ include_once('conexion.php');
             <p>En EDUCAR PARA TRANSFORMAR, creemos en el poder de la educación para cambiar vidas y comunidades. Esperamos con entusiasmo embarcarnos en este viaje educativo junto a nuestros estudiantes, contribuyendo a forjar un futuro brillante y lleno de posibilidades para todos.</p>
         </div>
     </section>
+
+
     <section id="niveles-educativos">
         <h3>Niveles Educativos</h3>
         <div class="contenedor">
@@ -113,64 +117,35 @@ include_once('conexion.php');
         </div>
     </section>
 
-    <section id="instalaciones">
-        <h1>INSTALACIONES</h1>
-        <div class="Instalaciones-clase">
-            <div class="seccion1">
-                <h2>Pileta de natación</h2>
-            </div>
-            <div class="seccion2">
-                <h2>Cancha de fútbol</h2>
-            </div>
-            <div class="seccion3">
-                <h2>Pista de atletismo</h2>
-            </div>
-            <div class="seccion4">
-                <h2>Gimnasio Cubierto</h2>
-            </div>
-            <div class="seccion5">
-                <h2>Comedor</h2>
-            </div>
-            <div class="seccion6">
-                <h2>Laboratorios</h2>
-            </div>
-        </div>
-    </section>
-
 
     <section id="noticias">
-        <h1>Últimas Noticias</h1>
-        <div class="noticia">
-            <img src="img/noticia2.jpg" alt="Noticia 2">
-            <!-- <img src="img/noticia1.jpg" alt="Noticia 1">'; -->
-            <?php
+    <h1>Últimas Noticias</h1>
+    <div class="noticia">
+        <?php
 
-            $sql = "SELECT * FROM noticias ORDER BY id DESC";
-            $resultado = $conexion->query($sql);
+        $sql = "SELECT * FROM noticias ORDER BY id DESC";
+        $resultado = $conexion->query($sql);
 
-            // validación para mostrar los datos
-            if ($resultado->num_rows > 0) {
-
-                // hay información que mostrar
-                while ($row = $resultado->fetch_assoc()) {
-                    // if ($row["imagen"]) {
-                    //     echo "<img src='" . $row["imagen"] . "' alt='Imagen de la noticia'>";
-                    // }
-                    echo "<h3>" . $row["titulo"] . "<h3>";
-                    echo "<p>" . $row["contenido"] . "<p>";
-                }
-            } else {
-                echo "<p>No hay noticia actual</p>";
+        // validación para mostrar los datos
+        if ($resultado->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $resultado->fetch_assoc()) {
+                echo "<h3>" . $row["titulo"] . "</h3>";
+                echo "<p><strong>Fecha de Publicación:</strong> " . $row["fecha_publicacion"] . "</p>";
+                echo "<p>" . $row["contenido"] . "</p>";
             }
+        } else {
+            echo "<p>No hay noticias actualmente.</p>";
+        }
 
-            if (isset($_SESSION['rol_id']) && $_SESSION['rol_id'] === 1) {
-                // Mostrar contenido solo para administradores
-                echo "<a href='noticias/noticias.php'>Noticias </a>";
-            }
-            $conexion->close();
-            ?>
-        </div>
-    </section>
+        if (isset($_SESSION['rol_id']) && $_SESSION['rol_id'] === 1) {
+            // Mostrar contenido solo para administradores
+            echo "<a href='noticias/noticias.php'>Noticias</a>";
+        }
+        $conexion->close();
+        ?>
+    </div>
+</section>
 
     <section id="contacto">
 

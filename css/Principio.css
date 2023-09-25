@@ -36,7 +36,7 @@ p{font-size: 1,25cm;}
 }
 
 header {
-    background-color: #44d79c;
+    background-color: #3dfdb0;
     color: #fff;
     padding: 10px 0;
     position: fixed;
@@ -95,68 +95,89 @@ header {
     background-position: bottom;
     
 }
+/* Estilos para la sección de Quiénes Somos */
 #quienes-somos {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-    background: linear-gradient(to bottom, rgb(114, 102, 113), rgb(185, 99, 165), rgb(172, 10, 155));
-    text-align: left;
-    color: #f3f3f3;
+    background-color: #f2f2f2; /* Fondo gris claro */
+    padding: 20vh;
+    text-align: center;
 }
 
 #quienes-somos .contenedor {
     max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #quienes-somos h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    color:#333;
+    color: #237ad6; /* Color de texto oscuro */
 }
 
 #quienes-somos p {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
-    padding: 10px; /* Agregado espacio interno alrededor de los párrafos */
-    border: 1px solid #ff6600; /* Agregado un borde para encuadrar los párrafos */
-    border-radius: 8px; /* Redondeado de los bordes del encuadre */
+    color: #555; /* Color de texto gris */
 }
 
 #quienes-somos strong {
     font-weight: bold;
-    color: #333;
+    color: #333; /* Color de texto oscuro */
 }
 
 /* Estilos para enlaces dentro de la sección */
 #quienes-somos a {
     text-decoration: none;
+    color: #007bff; /* Color de enlace azul */
     transition: color 0.3s;
 }
 
-/* #quienes-somos a:hover {
-    color: #ff4500;
-} */
+#quienes-somos a:hover {
+    color: #ff6600; /* Color de enlace al pasar el cursor */
+}
 
-#niveles-educativos{
-    background-image: linear-gradient(to bottom, rgb(172, 10, 155), rgb(232, 42, 188), rgb(251, 109, 20));
-    color: azure;
+/* Estilos alternativos para la sección de Niveles Educativos */
+#niveles-educativos {
+    background-color: #f2f2f2;
+    color: #fefefe;
     text-align: center;
-    height:  100vh;
-    padding-top: 15vh;
+    padding: 20vh;
 }
 
-#niveles-educativos .contenedor{
-   padding: 100px 0px;
-
+#niveles-educativos h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1886e6;
 }
-    
+
+/* Estilos para cada nivel educativo */
+.nivel-inicial,
+.nivel-primario,
+.nivel-secundario {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+/* Efecto de desplazamiento al pasar el mouse sobre cada nivel educativo */
+.nivel-inicial:hover,
+.nivel-primario:hover,
+.nivel-secundario:hover {
+    transform: scale(1.05);
+}
+
 .nivel-inicial{
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction:  column;
+    flex-direction: column;
     padding: 40px;
     margin: 20px;
     background-image: linear-gradient(
@@ -164,7 +185,7 @@ header {
         rgba(55, 49, 49, 0.226),
         rgba(55, 49, 49, 0.685)
     ),url("img/inicial.png");
-    background-size: cover;
+    background-size: cover; /* Fondo que cubre todo el elemento */
     background-position: center;
 }
 .nivel-primario{
@@ -173,7 +194,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction:  column;
+    flex-direction: column;
     padding: 40px;
     margin: 20px;
     background-image: linear-gradient(
@@ -181,7 +202,7 @@ header {
         rgba(55, 49, 49, 0.226),
         rgba(55, 49, 49, 0.685)
     ),url("img/primaria.png");
-    background-size: cover;
+    background-size: cover; /* Fondo que cubre todo el elemento */
     background-position: center;
 }
 .nivel-secundario{
@@ -190,7 +211,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction:  column;
+    flex-direction: column;
     padding: 40px;
     margin: 20px;
     background-image: linear-gradient(
@@ -198,43 +219,81 @@ header {
         rgba(55, 49, 49, 0.226),
         rgba(55, 49, 49, 0.685)
     ),url("img/secundaria.png");
-    background-size: cover;
+    background-size: cover; /* Fondo que cubre todo el elemento */
     background-position: center;
 }
 
 
+
+/* Estilos para los títulos y descripciones de cada nivel educativo */
+
+.nivel-inicial h2,
+.nivel-primario h2,
+.nivel-secundario h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+}
+.nivel-inicial p,
+.nivel-primario P,
+.nivel-secundario p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del contenido de Niveles Educativos */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* Estilos para la sección de Bienestar Estudiantil */
 #bienestar-estudiantil {
-    padding-top: 25vh;
-    padding-bottom: 25vh;
-    background-color: #f9f9f9;
+    color: #237ad6;
+    background-color: #f2f2f2;
+    padding: 20vh;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction:  column;
 }
 
 #bienestar-estudiantil h2 {
-    font-size: 36px; /* Aumenta el tamaño de la fuente del título */
-    color: #333;
-    margin-bottom: 30px; /* Aumenta el espacio inferior del título */
-    
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #237ad6;
 }
 
 #bienestar-estudiantil p {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
-    margin-bottom: 30px; /* Aumenta el espacio inferior del párrafo */
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 #bienestar-estudiantil ul {
     list-style: none;
+    text-align: left;
+    padding-left: 20px;
 }
 
 #bienestar-estudiantil li {
-    margin-bottom: 20px; /* Aumenta el espacio entre elementos de la lista */
-    text-align: left;
+    margin-bottom: 15px;
     font-size: 16px;
     color: #777;
+}
+
+#bienestar-estudiantil li strong {
+    color: #333;
+}
+
+/* Estilos para el contenedor */
+.contenedorBE {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Estilos para los enlaces dentro de los elementos li */
@@ -248,183 +307,182 @@ header {
     color: #ff6600;
 }
 
-/* Estilos para el contenedor */
-.contenedorBE {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Estilos para el párrafo de contacto */
+#bienestar-estudiantil p:last-child {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilos para el botón de contacto */
+#bienestar-estudiantil button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+#bienestar-estudiantil button:hover {
+    background-color: #ff6600;
 }
 
 
-#instalaciones{
-    background-image: linear-gradient(to bottom, rgb(251, 109, 20), rgb(255, 0, 0), rgb(0, 85, 255));
-    text-align: center;
-}
-#instalaciones h1{
-    color: azure;
-    padding: 100px;
-}
 
-.Instalaciones-clase {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las secciones se envuelvan a la siguiente línea si no caben en el ancho de la pantalla */
-    justify-content: space-between; /* Distribuye el espacio entre las secciones */
-    
-    
-}
-.Instalaciones-clase h2 {
-    position:relative;
-    top: 300px;
-    color: rgb(235, 235, 235);
-}
-
-.seccion1{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/natacion.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.seccion2{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/futbol.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.seccion3{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/Atletismo.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.seccion4{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/Gimnasio.jpg");
-    background-size:cover;
-    background-position: center;
-}
-.seccion5{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/comedor.jpg");
-    background-size: cover;
-    background-position: center;
-    
-}
-.seccion6{
-    width: 450px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
-    border-radius: 10px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(55, 49, 49, 0.516),
-        rgba(55, 49, 49, 0.685)
-    ),url("img/Laboratorio-Computacion.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.seccion1, .seccion2, .seccion3, .seccion4, .seccion5, .seccion6 {
-    margin-bottom: 20px; /* Ajusta este valor según tus preferencias */
-}
-.seccion1, .seccion2, .seccion3, .seccion4, .seccion5, .seccion6 {
-    padding: 20px; /* Ajusta este valor según tus preferencias */
-}
 
 #noticias {
-    background-image: linear-gradient(to bottom, rgb(0, 85, 255), rgb(42, 175, 232), rgb(191, 233, 237));
+    background-color: #f2f2f2;
     text-align: center;
-    padding-top: 15vh;
+    padding: 20vh;
+    color: #237ad6;
 }
 
-#noticias h1{
-    color: azure;
-    padding: 50px;
-    font-size: 8vh;
-}
-
-#noticias h2 {
-    color: #333;
+#noticias h1 {
+    font-size: 36px; /* Aumenta el tamaño del título */
     margin-bottom: 20px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilos para cada noticia */
+.noticia {
+    background-image: linear-gradient(to bottom, rgb(191, 233, 237), rgb(42, 175, 232), rgb(191, 233, 237));
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .noticia img {
     border-radius: 10px;
     max-width: 100%;
     height: auto;
-    margin-bottom: 2vh;
+    margin-bottom: 20px; /* Aumenta el espacio inferior de la imagen */
 }
 
 .noticia h3 {
-    color: #555;
-    margin: 10px 0;
-    font-size: 30px;
+    font-size: 24px; /* Tamaño del título de la noticia */
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .noticia p {
-    color: #777;
-    margin-left: 10vh;
-    margin-right: 10vh;
-    margin-bottom: 3.5vh;
-    padding: 0.5vh;
-    font-size: 25px;
+    font-size: 18px; /* Tamaño del contenido de la noticia */
+    color: #4d4c4c;
+    margin-bottom: 20px; /* Aumenta el espacio inferior del párrafo */
     text-align: justify;
+    padding: 0.5em;
 }
 
-.noticia img{
-    width: 300px; /* Ancho deseado */
-    height: 300px; /* Alto deseado */
+.noticia a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
 }
+
+.noticia a:hover {
+    color: #ff6600;
+}
+
+/* Contenedor del contenido de noticias */
+.contenedor {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+
+
+
+#contacto {
+    background-color: #f2f2f2;
+    padding: 20vh;
+    text-align: center;
+  }
+  
+  .form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .form h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form p {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .div-contact {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .div-contact .fa {
+    margin-right: 10px;
+    color: #007bff;
+  }
+  
+  .redes-sociales {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .redes-sociales a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 24px;
+  }
+  
+  .redes-sociales i {
+    margin-right: 5px;
+  }
+
+
 
 /* Estilos para la sección de ubicación */
 #ubicacion {
-    background-color: #f9f9f9;
-    padding: 40px 0;
+    background-color: #f2f2f2;
+    padding: 20vh;
     text-align: center;
 }
 
 #ubicacion h1 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #237ad6;
 }
 
 #ubicacion hr {
@@ -444,7 +502,7 @@ header {
 
 /* Estilos para el pie de página */
 footer {
-    background-color: #333;
+    background-color: #e95555;
     color: #fff;
     text-align: center;
     padding: 20px 0;

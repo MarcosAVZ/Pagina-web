@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="topnav" id="topnav">
-            <a href="../Principal.php">Inicio</a>
+            <a href="../index.php">Inicio</a>
             <a href="insertar.php">Insertar</a>
             <a href="actualizar.php">Actualizar</a>
             <a href="eliminar.php">Eliminar</a>
