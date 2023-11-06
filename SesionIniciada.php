@@ -1,14 +1,5 @@
 <?php
-
-// Iniciar la sesión
 session_start();
-
-// Cerrar la sesión (eliminar todos los datos de la sesión)
-session_destroy();
-
-// Redirigir al usuario a la página de inicio o a donde desees
-
-
 include_once('conexion.php');
 $conexion = conectar();
 ?>
@@ -73,6 +64,9 @@ $conexion = conectar();
 				<a class="nav-link" href="#ubicacion">Ubicación</a>
 				</li>
 				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="app.php">Aplicacion</a>
+				</li>
             </ul>
         </nav>
 		<div id="IniciarSesion">
@@ -84,7 +78,7 @@ $conexion = conectar();
                 echo '<a href="logout.php" class="iniciar">Cerrar sesión</a>';
             } else {
                 // Si el usuario no ha iniciado sesión, mostrar "Iniciar Sesión"
-                echo '<a href="Iniciar_sesion.php" class="iniciar">Iniciar Sesión</a>';
+                echo '<a href="index.php" class="iniciar">Cerrar Sesion</a>';
             }
             ?>
         </div>
